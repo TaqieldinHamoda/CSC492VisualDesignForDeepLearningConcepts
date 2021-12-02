@@ -7,6 +7,8 @@ The following videos demonstrate different cases of regular convolutions and the
 ```python
 title = Text("Attention in RNNs", gradient=(BLUE, GREEN)).scale(1.5)
 self.play(Write(title))
+self.wait(2)
+self.play(FadeOut(title))
 ```
 
 # Installation
