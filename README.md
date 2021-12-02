@@ -2,6 +2,13 @@
 
 The following videos demonstrate different cases of regular convolutions and their equivalent transposed convolutions. They can be used as a visual aid when teaching machine learning and were created to be used by the University of Toronto Mississauga's CSC311: Introduction to Machine Learning and CSC413: Neural Networks and Deep Learning classes.
 
+# Title Card Generation
+
+```python
+title = Text("Attention in RNNs", gradient=(BLUE, GREEN)).scale(1.5)
+self.play(Write(title))
+```
+
 # Installation
 
 To render videos on your local machine Python and manim must be installed.
