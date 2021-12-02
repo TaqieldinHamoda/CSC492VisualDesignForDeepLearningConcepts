@@ -1,6 +1,6 @@
 # CSC492 Visual Design for Deep Learning Concepts
 
-The following videos demonstrate different cases of regular convolutions and their equivalent transposed convolutions. They can be used as a visual aid when teaching machine learning and were created to be used by the University of Toronto Mississauga's CSC311: Introduction to Machine Learning and CSC413: Neural Networks and Deep Learning classes.
+The following videos can be used to aid in visualizing concepts when teaching machine learning. They were created to be used by the University of Toronto Mississauga's CSC311: Introduction to Machine Learning and CSC413: Neural Networks and Deep Learning classes and were made in CSC492: Visual Design for Deep Learning Concepts project course.
 
 # Title Card Generation
 
@@ -15,7 +15,23 @@ self.play(FadeOut(title))
 
 To render videos on your local machine Python and manim must be installed.
 
+# Multi-Layer Preceptron
+
+# Convexity
+
+# Batch Normalization
+
+# Ravines
+
+# Automatic Differentiation
+
+# Recurrent Neural Networks
+
+# Attention
+
 # Transposed Convolutions
+The following videos demonstrate different cases of regular convolutions and their equivalent transposed convolutions. 
+
 ## No Padding, Unit Strides Convolution
 
 https://user-images.githubusercontent.com/28056407/144511559-02e33e1e-d62b-4033-ad42-379f9cd62a3d.mp4
@@ -42,6 +58,8 @@ This video shows regular and transposed convolutions for the case when there is 
 
 # Acknowledgements
 
-[A guide to convolution arithmetic for deep learning](https://github.com/vdumoulin/conv_arithmetic) was heavily referenced when completing these videos.
-
 The video animations were created using [the community version of Manim](https://github.com/ManimCommunity/manim).
+
+[A guide to convolution arithmetic for deep learning](https://github.com/vdumoulin/conv_arithmetic) was heavily referenced when completing the transposed convolution videos.
+
+
