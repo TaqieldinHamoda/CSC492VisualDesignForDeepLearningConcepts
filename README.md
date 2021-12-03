@@ -29,6 +29,8 @@ https://user-images.githubusercontent.com/6016719/144537960-5a5df6c9-34fa-4b73-9
 
 # Ravines
 
+https://user-images.githubusercontent.com/28056407/144652636-7ab66d11-d0bd-4f53-a0d0-b10329cb7b8b.mp4
+
 # Automatic Differentiation
 **Note**: **DO NOT** use Manim 0.12.0 to compile the video as Manim has not patched their bug yet. The video was developed with version 0.11.0 and is the prefered version to compile this video
 
