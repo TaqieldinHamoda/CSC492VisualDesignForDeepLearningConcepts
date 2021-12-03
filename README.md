@@ -2,15 +2,6 @@
 
 The following videos can be used to aid in visualizing concepts when teaching machine learning. They were created to be used by the University of Toronto Mississauga's CSC311: Introduction to Machine Learning and CSC413: Neural Networks and Deep Learning classes and were made in CSC492: Visual Design for Deep Learning Concepts project course.
 
-# Title Card Generation
-
-```python
-title = Text("Attention in RNNs", gradient=(BLUE, GREEN)).scale(1.5)
-self.play(Write(title))
-self.wait(2)
-self.play(FadeOut(title))
-```
-
 # Installation
 
 To render videos on your local machine Python and manim must be installed.
