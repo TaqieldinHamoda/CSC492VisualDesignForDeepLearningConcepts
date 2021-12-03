@@ -14,10 +14,9 @@ self.play(FadeOut(title))
 # Installation
 
 To render videos on your local machine Python and manim must be installed.
+See [Manim's installation guide](https://docs.manim.community/en/stable/installation.html)
 
-# Multi-Layer Preceptron
-
-# Convexity
+# Convexity of MLP
 
 https://user-images.githubusercontent.com/6016719/144537920-6170799f-a017-486c-9741-187305143b78.mp4
 
@@ -31,6 +30,8 @@ https://user-images.githubusercontent.com/6016719/144537960-5a5df6c9-34fa-4b73-9
 # Ravines
 
 # Automatic Differentiation
+
+https://play.library.utoronto.ca/watch/15455bbfd3658caed9048343f8721ddc
 
 # Recurrent Neural Networks
 
