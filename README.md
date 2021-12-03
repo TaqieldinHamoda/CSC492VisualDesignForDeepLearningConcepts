@@ -18,6 +18,8 @@ The video demostrates the convexity of a neural network by swapping two nodes (c
 
 https://user-images.githubusercontent.com/6016719/144537960-5a5df6c9-34fa-4b73-9e2f-df39d51fa0f0.mp4
 
+This video demonstrates on computing the batch norm for a neural network. First the video shows how input is split up into batches and passed as input to the network. The hidden values are computed using arbitrary weights and shown in green. The next scene shows the calculation of the mean and variance of the hidden units along each dimension. These values are used in the next scene where the norm is calculated and the normalized values are put inside the neurons of the network.
+
 # Ravines
 
 https://user-images.githubusercontent.com/28056407/144652636-7ab66d11-d0bd-4f53-a0d0-b10329cb7b8b.mp4
@@ -28,6 +30,8 @@ This video demonstrates how ravines can be normalized to be easier to work with,
 **Note**: **DO NOT** use Manim 0.12.0 to compile the video as Manim has not patched their bug yet. The video was developed with version 0.11.0 and is the prefered version to compile this video
 
 https://play.library.utoronto.ca/watch/15455bbfd3658caed9048343f8721ddc
+
+This video demonstrates the forward and backward pass computations using automatic differentiation. The first scene shows the decomposition of the loss function downwards until z1 and z2. The values are placed in the neurons as the forward pass calculations are computed. As the backward pass computations are happening, different edges of the network glow red to show the path the error signal takes. 
 
 # Recurrent Neural Networks
 
