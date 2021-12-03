@@ -18,16 +18,24 @@ To render videos on your local machine Python and manim must be installed.
 # Multi-Layer Preceptron
 
 # Convexity
+
+https://user-images.githubusercontent.com/6016719/144537920-6170799f-a017-486c-9741-187305143b78.mp4
+
 (This visualization is best to be presented as a gif, but will be a video here)
 The video demostrates the convexity of a neural network by swapping two nodes (connected by weights colored with red and blue) and showing that there is a another set of weights which will have the same loss as before the swap.
 
 # Batch Normalization
+
+https://user-images.githubusercontent.com/6016719/144537960-5a5df6c9-34fa-4b73-9e2f-df39d51fa0f0.mp4
 
 # Ravines
 
 # Automatic Differentiation
 
 # Recurrent Neural Networks
+
+https://user-images.githubusercontent.com/6016719/144537988-d265a734-f0a3-4427-b59a-02b804fb2c98.mp4
+
 This video focuses on the computation process in RNN during training using sentimental analysis. The two major scenes are embedding look up and forward pass computation. The embedding lookup shows how we obtained the vectors representing each word from an embedding (e.g. a custom embedding, GloVe, etc.). After we obtained the input, we focus on the time steps one by one, using ` x_i, h_{t-1} ` along with fixed weights `V, W` to calculate ` h_t `.
 
 # Attention
