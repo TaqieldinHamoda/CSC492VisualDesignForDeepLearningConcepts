@@ -30,6 +30,7 @@ https://user-images.githubusercontent.com/6016719/144537960-5a5df6c9-34fa-4b73-9
 # Ravines
 
 # Automatic Differentiation
+**Note**: **DO NOT** use Manim 0.12.0 to compile the video as Manim has not patched their bug yet. The video was developed with version 0.11.0 and is the prefered version to compile this video
 
 https://play.library.utoronto.ca/watch/15455bbfd3658caed9048343f8721ddc
 
