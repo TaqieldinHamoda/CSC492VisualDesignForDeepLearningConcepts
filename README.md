@@ -4,8 +4,23 @@ The following videos can be used to aid in visualizing concepts when teaching ma
 
 # Installation
 
-To render videos on your local machine Python and manim must be installed.
-See [Manim's installation guide](https://docs.manim.community/en/stable/installation.html)
+## Installing Manim
+In order to render the videos, Manim must be installed.
+Please see [Manim's installation guide](https://docs.manim.community/en/stable/installation.html) for more information.
+
+Note that since Latex is used in the videos rendered, the [optional dependencies](https://docs.manim.community/en/stable/installation/linux.html#optional-dependencies) must be installed as well.
+
+## Rendering the Videos
+To render the videos, you must have access to a terminal and ensure that you are in the directory of your desired video.
+
+Manim provides a rich command-line tool to assist in rendering the scenes. In order to render a video, you must tell Manim the **name of the file** and the **Class** that should be rendered.
+
+The following is an example command for rendering the Attention video:
+
+480p: `manim -ql attention.py Attention`
+
+1080p: `manim -qh attention.py Attention`
+
 
 # Convexity of MLP
 
