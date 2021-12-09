@@ -21,7 +21,7 @@ The following is an example command for rendering the Attention video:
 
 1080p 60fps: `manim -qh attention.py Attention`
 
-**Please see Manim's ![Configuration Page](https://docs.manim.community/en/stable/tutorials/configuration.html) for more information on rendering videos.**
+**Please see Manim's [Configuration Page](https://docs.manim.community/en/stable/tutorials/configuration.html) for more information on rendering videos.**
 
 # Attention
 
@@ -30,7 +30,7 @@ https://user-images.githubusercontent.com/46078134/145479213-9ca9cfe5-aaab-45ee-
 # Automatic Differentiation
 **Note**: **DO NOT** use Manim 0.12.0 to compile the video as Manim has not patched their bug yet. The video was developed with version 0.11.0 and is the prefered version to compile this video
 
-*This Video is a lower quality version (480p, 15fps). A ![higher quality version](https://github.com/rileyhannigan/CSC492VisualDesignForDeepLearningConcepts/blob/main/videos/Autodiff.mp4) can be found in the videos folder*
+*This Video is a lower quality version (480p, 15fps). A [higher quality version](https://github.com/rileyhannigan/CSC492VisualDesignForDeepLearningConcepts/blob/main/videos/Autodiff.mp4) can be found in the videos folder*
 
 https://user-images.githubusercontent.com/46078134/145480699-2256b5fd-0307-406d-a0bf-9d58a7fc5921.mp4
 
