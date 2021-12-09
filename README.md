@@ -50,8 +50,9 @@ This video demonstrates how ravines can be normalized to be easier to work with,
 # Automatic Differentiation
 **Note**: **DO NOT** use Manim 0.12.0 to compile the video as Manim has not patched their bug yet. The video was developed with version 0.11.0 and is the prefered version to compile this video
 
+*This Video is a lower quality version (480p, 15fps). A ![higher quality version]() can be found in the videos folder*
 
-![Automatic Differentiation Visualization](https://play.library.utoronto.ca/watch/15455bbfd3658caed9048343f8721ddc)
+https://user-images.githubusercontent.com/46078134/145480699-2256b5fd-0307-406d-a0bf-9d58a7fc5921.mp4
 
 This video demonstrates the forward and backward pass computations using automatic differentiation. The first scene shows the decomposition of the loss function downwards until z1 and z2. The values are placed in the neurons as the forward pass calculations are computed. As the backward pass computations are happening, different edges of the network glow red to show the path the error signal takes. 
 
