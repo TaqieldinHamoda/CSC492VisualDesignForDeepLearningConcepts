@@ -230,6 +230,7 @@ class Ravine(Scene):
 			FadeOut(r_graphs[2]),
 			FadeOut(r_graphs[1]),
 			FadeOut(r_graphs[0]),
+			FadeOut(labels_r_graph),
 			FadeOut(r_graph)
 		)
 
@@ -356,6 +357,7 @@ class Ravine(Scene):
                         FadeOut(n_graphs[2]),
                         FadeOut(n_graphs[1]),
                         FadeOut(n_graphs[0]),
+			FadeOut(labels_n_graph),
                         FadeOut(n_graph)
 		)
 
