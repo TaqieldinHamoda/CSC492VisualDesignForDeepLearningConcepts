@@ -17,16 +17,30 @@ Manim provides a rich command-line tool to assist in rendering the scenes. In or
 
 The following is an example command for rendering the Attention video:
 
-480p: `manim -ql attention.py Attention`
+480p 15fps: `manim -ql attention.py Attention`
 
-1080p: `manim -qh attention.py Attention`
+1080p 60fps: `manim -qh attention.py Attention`
 
+**Please see Manim's [Configuration Page](https://docs.manim.community/en/stable/tutorials/configuration.html) for more information on rendering videos.**
 
 # Attention
 
-
 https://user-images.githubusercontent.com/46078134/145479213-9ca9cfe5-aaab-45ee-8acf-581d16edbbf8.mp4
 
+# Automatic Differentiation
+**Note**: **DO NOT** use Manim 0.12.0 to compile the video as Manim has not patched their bug yet. The video was developed with version 0.11.0 and is the prefered version to compile this video
+
+*This Video is a lower quality version (480p, 15fps). A [higher quality version](https://github.com/rileyhannigan/CSC492VisualDesignForDeepLearningConcepts/blob/main/videos/Autodiff.mp4) can be found in the videos folder*
+
+https://user-images.githubusercontent.com/46078134/145480699-2256b5fd-0307-406d-a0bf-9d58a7fc5921.mp4
+
+This video demonstrates the forward and backward pass computations using automatic differentiation. The first scene shows the decomposition of the loss function downwards until z1 and z2. The values are placed in the neurons as the forward pass calculations are computed. As the backward pass computations are happening, different edges of the network glow red to show the path the error signal takes. 
+
+# Batch Normalization
+
+https://user-images.githubusercontent.com/6016719/144537960-5a5df6c9-34fa-4b73-9e2f-df39d51fa0f0.mp4
+
+This video demonstrates on computing the batch norm for a neural network. First the video shows how input is split up into batches and passed as input to the network. The hidden values are computed using arbitrary weights and shown in green. The next scene shows the calculation of the mean and variance of the hidden units along each dimension. These values are used in the next scene where the norm is calculated and the normalized values are put inside the neurons of the network.
 
 # Convexity of MLP
 
@@ -35,34 +49,17 @@ https://user-images.githubusercontent.com/6016719/144537920-6170799f-a017-486c-9
 (This visualization is best to be presented as a gif, but will be a video here)
 The video demostrates the convexity of a neural network by swapping two nodes (connected by weights colored with red and blue) and showing that there is a another set of weights which will have the same loss as before the swap.
 
-# Batch Normalization
-
-https://user-images.githubusercontent.com/6016719/144537960-5a5df6c9-34fa-4b73-9e2f-df39d51fa0f0.mp4
-
-This video demonstrates on computing the batch norm for a neural network. First the video shows how input is split up into batches and passed as input to the network. The hidden values are computed using arbitrary weights and shown in green. The next scene shows the calculation of the mean and variance of the hidden units along each dimension. These values are used in the next scene where the norm is calculated and the normalized values are put inside the neurons of the network.
-
 # Ravines
 
 https://user-images.githubusercontent.com/28056407/144652636-7ab66d11-d0bd-4f53-a0d0-b10329cb7b8b.mp4
 
 This video demonstrates how ravines can be normalized to be easier to work with, and shows a visual representation of this process. 
 
-# Automatic Differentiation
-**Note**: **DO NOT** use Manim 0.12.0 to compile the video as Manim has not patched their bug yet. The video was developed with version 0.11.0 and is the prefered version to compile this video
-
-*This Video is a lower quality version (480p, 15fps). A ![higher quality version]() can be found in the videos folder*
-
-https://user-images.githubusercontent.com/46078134/145480699-2256b5fd-0307-406d-a0bf-9d58a7fc5921.mp4
-
-This video demonstrates the forward and backward pass computations using automatic differentiation. The first scene shows the decomposition of the loss function downwards until z1 and z2. The values are placed in the neurons as the forward pass calculations are computed. As the backward pass computations are happening, different edges of the network glow red to show the path the error signal takes. 
-
 # Recurrent Neural Networks
 
 https://user-images.githubusercontent.com/6016719/144537988-d265a734-f0a3-4427-b59a-02b804fb2c98.mp4
 
 This video focuses on the computation process in RNN during training using sentimental analysis. The two major scenes are embedding look up and forward pass computation. The embedding lookup shows how we obtained the vectors representing each word from an embedding (e.g. a custom embedding, GloVe, etc.). After we obtained the input, we focus on the time steps one by one, using ` x_i, h_{t-1} ` along with fixed weights `V, W` to calculate ` h_t `.
-
-# Attention
 
 # Transposed Convolutions
 The following videos demonstrate different cases of regular convolutions and their equivalent transposed convolutions. 
