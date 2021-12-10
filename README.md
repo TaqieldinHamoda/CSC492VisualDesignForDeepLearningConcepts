@@ -51,7 +51,7 @@ The video demostrates the convexity of a neural network by swapping two nodes (c
 
 # Ravines
 
-https://user-images.githubusercontent.com/28056407/144652636-7ab66d11-d0bd-4f53-a0d0-b10329cb7b8b.mp4
+https://user-images.githubusercontent.com/46078134/145495503-ef1c66f1-9ffa-4e4c-9551-9b24b9359564.mp4
 
 This video demonstrates how ravines can be normalized to be easier to work with, and shows a visual representation of this process. 
 
