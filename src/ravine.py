@@ -130,7 +130,8 @@ class Ravine(Scene):
 			axis_config={"include_numbers": True}
 		).to_edge(RIGHT).to_edge(UP)
 
-		labels = r_graph.get_axis_labels(x_label='w_1', y_label='w_2')
+		labels_r_graph = r_graph.get_axis_labels(x_label='w_1', y_label='w_2')
+		labels_n_graph = r_graph.get_axis_labels(x_label='w_1', y_label='w_2')
 
 		# Math Text
 		weight_values = [
@@ -199,7 +200,7 @@ class Ravine(Scene):
 			r_graph.get_implicit_curve(ravines[2], color=BLUE),
 		]
 
-		self.play(FadeIn(r_graph))
+		self.play(FadeIn(r_graph + labels_r_graph))
 		self.wait()
 		self.play(Create(r_graphs[0]))
 		self.wait(2)
@@ -320,7 +321,7 @@ class Ravine(Scene):
 			n_graph.get_implicit_curve(normals[2], color=BLUE),
 		]
 
-		self.play(FadeIn(n_graph))
+		self.play(FadeIn(n_graph + labels_n_graph))
 		self.wait()
 		self.play(Create(n_graphs[0]))
 		self.wait(2)
