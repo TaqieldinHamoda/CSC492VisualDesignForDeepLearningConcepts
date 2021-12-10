@@ -1,6 +1,6 @@
 # CSC492 Visual Design for Deep Learning Concepts
 
-The following videos can be used to aid in visualizing concepts when teaching machine learning. They were created to be used by the University of Toronto Mississauga's CSC311: Introduction to Machine Learning and CSC413: Neural Networks and Deep Learning classes and were made in CSC492: Visual Design for Deep Learning Concepts project course.
+The following videos are provided as visual aid for deep learning concepts. They were created to be used by the University of Toronto Mississauga's CSC311: Introduction to Machine Learning and CSC413: Neural Networks and Deep Learning classes and were made in CSC492: Visual Design for Deep Learning Concepts project course; however, they are free to be used by anyone as long as work produced is freely available online and the original project is referenced. 
 
 # Installation
 
@@ -8,14 +8,16 @@ The following videos can be used to aid in visualizing concepts when teaching ma
 In order to render the videos, Manim must be installed.
 Please see [Manim's installation guide](https://docs.manim.community/en/stable/installation.html) for more information.
 
-Note that since Latex is used in the videos rendered, the [optional dependencies](https://docs.manim.community/en/stable/installation/linux.html#optional-dependencies) must be installed as well.
+**Note**: **DO NOT** use Manim 0.12.0 to compile the videos as it is unstable at the time of uploading this README. The videos were developed with Manim 0.11.0 and it is the prefered version to compile the videos with.
+
+**Note**: since Latex is used in the videos rendered, the [optional dependencies](https://docs.manim.community/en/stable/installation/linux.html#optional-dependencies) must be installed as well.
 
 ## Rendering the Videos
 To render the videos, you must have access to a terminal and ensure that you are in the directory of your desired video.
 
 Manim provides a rich command-line tool to assist in rendering the scenes. In order to render a video, you must tell Manim the **name of the file** and the **Class** that should be rendered.
 
-The following is an example command for rendering the Attention video:
+Here is an example showing how to render the Attention video:
 
 480p 15fps: `manim -ql attention.py Attention`
 
@@ -27,8 +29,14 @@ The following is an example command for rendering the Attention video:
 
 https://user-images.githubusercontent.com/46078134/145479213-9ca9cfe5-aaab-45ee-8acf-581d16edbbf8.mp4
 
+This video demonstrates how attention is used alongside RNNs. Both the encoder (bottom layer) and the decoder (upper layer) units are fully trained
+and the weights have been optimized for the translation task presented: translating from English to Spanish. The previous output of the decoder is used alongside the outputs produced from the encoder to calculate the *alpha* (or *attention*) vector. The *alpha* vector provides a weight for each of the encoder's hidden units which helps the decoder determine which hidden unit (read **word**) to **pay more attention to** when determining the correct output.
+
+In the first iteration, the *alpha* vector gives the first hidden unit ("I") a weight of 0.12, the second hidden unit ("Eat") a weight of 0.88, and the third hidden unit ("Apples") a weight of 0.00. This allows the decoder to determine that the word it should output is the Spanish equivalent of the word "eat" and that it is conjucated for the pronoun "I"; as such, "Como" is the output provided.
+
+In the second iteration, the *alpha* vector gives the first hidden unit ("I") a weight of 0.00, the second hidden unit ("Eat") a weight of 0.01, and the third hidden unit ("Apples") a weight of 0.99. Using the previous output ("Como") and the context vector, the decoder is able to determine that the word it should output next is the Spanish equivalent of the word "Apples" and that it should ignore the other English words provided; as such, "Manzanas" is the output provided.
+
 # Automatic Differentiation
-**Note**: **DO NOT** use Manim 0.12.0 to compile the video as Manim has not patched their bug yet. The video was developed with version 0.11.0 and is the prefered version to compile this video
 
 *This Video is a lower quality version (480p, 15fps). A [higher quality version](https://github.com/rileyhannigan/CSC492VisualDesignForDeepLearningConcepts/blob/main/videos/Autodiff.mp4) can be found in the videos folder*
 
@@ -53,7 +61,7 @@ The video demostrates the convexity of a neural network by swapping two nodes (c
 
 https://user-images.githubusercontent.com/46078134/145495503-ef1c66f1-9ffa-4e4c-9551-9b24b9359564.mp4
 
-This video demonstrates how ravines can be normalized to be easier to work with, and shows a visual representation of this process. 
+This video demonstrates the impact of normalizing the input on the weight space. The dataset provided has a large difference between the *x1* and *x2* values. As such, the standard deviation is extremely large which results in a ravine in the weight space: 
 
 # Recurrent Neural Networks
 
