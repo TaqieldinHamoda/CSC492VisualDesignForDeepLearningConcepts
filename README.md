@@ -59,9 +59,9 @@ The video demostrates the convexity of a neural network by swapping two nodes (c
 
 # Ravines
 
-https://user-images.githubusercontent.com/46078134/145495503-ef1c66f1-9ffa-4e4c-9551-9b24b9359564.mp4
+https://user-images.githubusercontent.com/46078134/145517219-9e730257-17bb-4a88-8db6-a519b2fd1fda.mp4
 
-This video demonstrates the impact of normalizing the input on the weight space. The dataset provided has a large difference between the *x1* and *x2* values. As such, the standard deviation is extremely large which results in a ravine in the weight space: 
+This video demonstrates the impact of normalizing the input on the weight space. The dataset provided has a large difference between the *x1* and *x2* values. As such, the standard deviation is extremely large which results in a ravine in the weight space: the range of values is extremely narrow for one of the weights and extremely wide for the other. One way to resolve this issue, is to normalize the inputs such that they have a **mean of 0** and a **standard deviation of 1**; this will result in a more balanced weight space as seen later on.
 
 # Recurrent Neural Networks
 
