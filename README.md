@@ -56,8 +56,7 @@ This video demonstrates on computing the batch norm for a neural network. First 
 
 https://user-images.githubusercontent.com/6016719/144537920-6170799f-a017-486c-9741-187305143b78.mp4
 
-(This visualization is best to be presented as a gif, but will be a video here)
-The video demostrates the convexity of a neural network by swapping two nodes (connected by weights colored with red and blue) and showing that there is a another set of weights which will have the same loss as before the swap.
+The video demonstrates that a neural network is neither convex nor concave by swapping two hidden activations h1 and h2 (connected by weights colored blue and red respectively). The corresponding entries in the weight matrices for h1 and h2 are also swapped. It shows that there exists another permutation of weights that will have the same prediction (and therefore the same loss) as before swapping the hidden activations h1 and h2. In the loss space, there will be multiple minimum loss as a result, hence a neural network is neither convex nor concave.
 
 # Ravines
 
