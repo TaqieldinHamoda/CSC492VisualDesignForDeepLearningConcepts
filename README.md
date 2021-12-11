@@ -40,9 +40,12 @@ In the second iteration, the *alpha* vector gives the first hidden unit ("I") a 
 
 # Automatic Differentiation
 
-*This Video is a lower quality version (480p, 15fps). A [higher quality version](https://github.com/rileyhannigan/CSC492VisualDesignForDeepLearningConcepts/blob/main/videos/Autodiff.mp4) can be found in the videos folder*
+*This Video is a lower quality version (480p, 15fps). A [higher quality version](https://github.com/rileyhannigan/CSC492VisualDesignForDeepLearningConcepts/blob/main/videos/autodiff_high.mp4) can be found in the videos folder*
 
-https://user-images.githubusercontent.com/46078134/145480699-2256b5fd-0307-406d-a0bf-9d58a7fc5921.mp4
+
+https://user-images.githubusercontent.com/6016719/145688934-fb0c5df4-d632-4eee-910e-12e03c27434f.mp4
+
+
 
 This video demonstrates the forward and backward pass computations using automatic differentiation. The first scene shows the decomposition of the loss function downwards until z1 and z2. The values are placed in the neurons as the forward pass calculations are computed. As the backward pass computations are happening, different edges of the network glow red to show the path the error signal takes. 
 
