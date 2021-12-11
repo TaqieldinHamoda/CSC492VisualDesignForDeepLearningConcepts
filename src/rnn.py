@@ -53,7 +53,7 @@ class Rnn(MovingCameraScene):
     self.play(Create(word1_to_emb))
     self.play(Indicate(embedding, scale_factor=1, color=BLUE))
 
-    word1_emb = MathTex(r'... \text{"I"}: \begin{bmatrix} 1.1 \\ -0.9 \end{bmatrix} ...').scale(0.25).move_to([word1_vector.get_center()[0], embedding_text.get_center()[1], 0])
+    word1_emb = MathTex(r'... \text{``I"}: \begin{bmatrix} 1.1 \\ -0.9 \end{bmatrix} ...').scale(0.25).move_to([word1_vector.get_center()[0], embedding_text.get_center()[1], 0])
 
     self.camera.frame.save_state()
 
@@ -70,7 +70,7 @@ class Rnn(MovingCameraScene):
     self.play(Create(word2_to_emb))
     self.play(Indicate(embedding, scale_factor=1, color=BLUE))
 
-    word2_emb = MathTex(r'... \text{"feel"}: \begin{bmatrix} -0.8 \\ 1.0 \end{bmatrix} ...').scale(0.25).move_to([word2_vector.get_center()[0], embedding_text.get_center()[1], 0])
+    word2_emb = MathTex(r'... \text{``feel"}: \begin{bmatrix} -0.8 \\ 1.0 \end{bmatrix} ...').scale(0.25).move_to([word2_vector.get_center()[0], embedding_text.get_center()[1], 0])
 
     self.camera.frame.save_state()
 
@@ -88,7 +88,7 @@ class Rnn(MovingCameraScene):
     self.play(Create(word3_to_emb))
     self.play(Indicate(embedding, scale_factor=1, color=BLUE))
 
-    word3_emb = MathTex(r'... \text{"thankful"}: \begin{bmatrix} 3.1 \\ 2.9 \end{bmatrix} ...').scale(0.25).move_to([word3_vector.get_center()[0], embedding_text.get_center()[1], 0])
+    word3_emb = MathTex(r'... \text{``thankful"}: \begin{bmatrix} 3.1 \\ 2.9 \end{bmatrix} ...').scale(0.25).move_to([word3_vector.get_center()[0], embedding_text.get_center()[1], 0])
 
     self.camera.frame.save_state()
 
@@ -116,9 +116,9 @@ class Rnn(MovingCameraScene):
               word2_vector.animate.move_to(ORIGIN).shift(DOWN*3), 
               word3_vector.animate.move_to(ORIGIN).shift(DOWN*3, RIGHT*4))
     
-    x1_label = MathTex('x_1', color=BLUE).move_to(word1_vector.get_top() + UP *0.5)
-    x2_label = MathTex('x_2', color=BLUE).move_to(word2_vector.get_top() + UP *0.5)
-    x3_label = MathTex('x_3', color=BLUE).move_to(word3_vector.get_top() + UP *0.5)
+    x1_label = MathTex('x^{(1)}', color=BLUE).move_to(word1_vector.get_top() + UP *0.5)
+    x2_label = MathTex('x^{(2)}', color=BLUE).move_to(word2_vector.get_top() + UP *0.5)
+    x3_label = MathTex('x^{(3)}', color=BLUE).move_to(word3_vector.get_top() + UP *0.5)
 
     self.play(Write(x1_label), Write(x2_label), Write(x3_label))
 
@@ -137,21 +137,21 @@ class Rnn(MovingCameraScene):
     target_vector = Matrix([[1], [0]]).next_to(t)
     target = VGroup(t, 
                     target_vector, 
-                    MathTex(r' = : )').next_to(target_vector))
+                    MathTex(r' = \text{happy}').next_to(target_vector))
     self.play(Create(target))
     self.wait()
     
-    h1_label = MathTex('h_1', color=RED).move_to(x1_label.get_top()).shift(UP*2)
-    h2_label = MathTex('h_2', color=RED).move_to(x2_label.get_top()).shift(UP*2)
-    h3_label = MathTex('h_3', color=RED).move_to(x3_label.get_top()).shift(UP*2)
+    h1_label = MathTex('h^{(1)}', color=RED).move_to(x1_label.get_top()).shift(UP*2)
+    h2_label = MathTex('h^{(2)}', color=RED).move_to(x2_label.get_top()).shift(UP*2)
+    h3_label = MathTex('h^{(3)}', color=RED).move_to(x3_label.get_top()).shift(UP*2)
 
-    h1_label_with_value = MathTex(r'{{ h_1 }} = {{ \begin{bmatrix} 1.1 \\ -0.2 \end{bmatrix} }}', color=GREEN).scale(0.7).move_to(h1_label) # h0->h1 need to be spaced out properly
-    h2_label_with_value = MathTex(r'{{ h_2 }} = {{ \begin{bmatrix} 0.3 \\ -0.4 \end{bmatrix} }}', color=GREEN).scale(0.7).move_to(h2_label) 
-    h3_label_with_value = MathTex(r'{{ h_3 }} = {{ \begin{bmatrix} 3.4 \\ -6.4 \end{bmatrix} }}', color=GREEN).scale(0.7).move_to(h3_label) 
+    h1_label_with_value = MathTex(r'{{ h^{(1)} }} = {{ \begin{bmatrix} 1.1 \\ -0.2 \end{bmatrix} }}', color=GREEN).scale(0.7).move_to(h1_label) # h0->h1 need to be spaced out properly
+    h2_label_with_value = MathTex(r'{{ h^{(2)} }} = {{ \begin{bmatrix} 0.3 \\ -0.4 \end{bmatrix} }}', color=GREEN).scale(0.7).move_to(h2_label) 
+    h3_label_with_value = MathTex(r'{{ h^{(3)} }} = {{ \begin{bmatrix} 3.4 \\ -6.4 \end{bmatrix} }}', color=GREEN).scale(0.7).move_to(h3_label) 
 
     # h0 has 2 labels due to spacing issues
-    h0_label = MathTex(r'h_0={{ \begin{bmatrix} 0 \\ 0 \end{bmatrix} }}', color=GREEN).scale(0.7).move_to([h1_label.get_left()]).shift(LEFT*4)
-    h0_label_overview = MathTex(r'h_0={{ \begin{bmatrix} 0 \\ 0 \end{bmatrix} }}', color=GREEN).scale(0.7).move_to([h1_label.get_left()]).shift(LEFT*2)
+    h0_label = MathTex(r'h^{(0)}={{ \begin{bmatrix} 0 \\ 0 \end{bmatrix} }}', color=GREEN).scale(0.7).move_to([h1_label.get_left()]).shift(LEFT*4)
+    h0_label_overview = MathTex(r'h^{(0)}={{ \begin{bmatrix} 0 \\ 0 \end{bmatrix} }}', color=GREEN).scale(0.7).move_to([h1_label.get_left()]).shift(LEFT*2)
 
     h0_to_h1 = Line(start=h0_label.get_right(), end=h1_label_with_value.get_left(), buff=0.2).add_tip()
     h0_to_h1_overview = Line(start=h0_label_overview.get_right(), end=h1_label_with_value.get_left(), buff=0.2).add_tip()
@@ -176,10 +176,10 @@ class Rnn(MovingCameraScene):
     self.play(Create(h1_label))
 
     # calculation for h1
-    h1_calculation = MathTex(r'{{ h_1 }} = {{ V }} \cdot {{ h_0 }} + {{ W }} \cdot {{ x_1 }}').scale(0.6).move_to(time_step_frame).shift(LEFT*5, UP)
-    h1_calculation.set_color_by_tex('h_1', RED)
-    h1_calculation.set_color_by_tex('h_0', GREEN)
-    h1_calculation.set_color_by_tex('x_1', BLUE)
+    h1_calculation = MathTex(r'{{ h^{(1)} }} = {{ V }} \cdot {{ h^{(0)} }} + {{ W }} \cdot {{ x^{(1)} }}').scale(0.6).move_to(time_step_frame).shift(LEFT*5, UP)
+    h1_calculation.set_color_by_tex('h^{(1)}', RED)
+    h1_calculation.set_color_by_tex('h^{(0)}', GREEN)
+    h1_calculation.set_color_by_tex('x^{(1)}', BLUE)
 
     h1_sub = MathTex(r'= {{ \begin{bmatrix} 1 & 0\\0 & 1 \end{bmatrix} }} \cdot {{ \begin{bmatrix} 0 \\ 0 \end{bmatrix} }} +' \
                      + r'{{ \begin{bmatrix} 1 & 0\\-1 & -1 \end{bmatrix} }} \cdot {{ \begin{bmatrix} 1.1\\-0.9 \end{bmatrix} }}').scale(0.6).align_to(h1_calculation.submobjects[1], LEFT).shift(DOWN*1.25)
@@ -198,10 +198,10 @@ class Rnn(MovingCameraScene):
     self.wait(3)
 
     # move to calculation of h_2
-    h2_calculation = MathTex(r'{{ h_2 }} =  {{ V }} \cdot {{ h_1 }} + {{ W }} \cdot {{ x_2 }}').scale(0.6).move_to(h1_calculation)
-    h2_calculation.set_color_by_tex('h_2', RED)
-    h2_calculation.set_color_by_tex('h_1', GREEN)
-    h2_calculation.set_color_by_tex('x_2', BLUE)
+    h2_calculation = MathTex(r'{{ h^{(2)} }} =  {{ V }} \cdot {{ h^{(1)} }} + {{ W }} \cdot {{ x^{(2)} }}').scale(0.6).move_to(h1_calculation)
+    h2_calculation.set_color_by_tex('h^{(2)}', RED)
+    h2_calculation.set_color_by_tex('h^{(1)}', GREEN)
+    h2_calculation.set_color_by_tex('x^{(2)}', BLUE)
 
     self.play(Transform(h1_label, h1_label_with_value))
     self.wait(2)
@@ -237,10 +237,10 @@ class Rnn(MovingCameraScene):
     self.wait(3)
 
     # move to calculation of h_3
-    h3_calculation = MathTex(r'{{ h_3 }} =  {{ V }} \cdot {{ h_2 }} + {{ W }} \cdot {{ x_3 }}').scale(0.6).move_to(h1_calculation)
-    h3_calculation.set_color_by_tex('h_3', RED)
-    h3_calculation.set_color_by_tex('h_2', GREEN)
-    h3_calculation.set_color_by_tex('x_3', BLUE)
+    h3_calculation = MathTex(r'{{ h^{(3)} }} =  {{ V }} \cdot {{ h^{(2)} }} + {{ W }} \cdot {{ x^{(3)} }}').scale(0.6).move_to(h1_calculation)
+    h3_calculation.set_color_by_tex('h^{(3)}', RED)
+    h3_calculation.set_color_by_tex('h^{(2)}', GREEN)
+    h3_calculation.set_color_by_tex('x^{(3)}', BLUE)
 
     self.play(Transform(h2_label, h2_label_with_value))
     self.wait(2)
@@ -291,10 +291,10 @@ class Rnn(MovingCameraScene):
               FadeIn(word2_vector))
     
 
-    y = MathTex(r'\begin{bmatrix} 1 \\ 0 \end{bmatrix}').move_to(h3_label).shift(UP*2)
+    y = MathTex(r'\begin{bmatrix} 2.1 \\ 0.5 \end{bmatrix}').move_to(h3_label).shift(UP*2)
     
     h3_to_y = Line(start=h3_label.get_top(), end=y.get_bottom(), buff=0.2).add_tip()
-    mlp_anno = Text('mlp').scale(0.5).next_to(h3_to_y)
+    mlp_anno = Text('MLP').scale(0.5).next_to(h3_to_y)
 
     self.play(Create(h3_to_y), Create(mlp_anno))
 

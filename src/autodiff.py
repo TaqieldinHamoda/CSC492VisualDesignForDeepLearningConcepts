@@ -45,6 +45,11 @@ class Autodiff(MovingCameraScene):
     d_node,  d_anno,  dnode_ani,  danno_ani  = self.create_node("\mathcal{D}", pos=[-6.1,  1.5,  0 ])
     l_node,  l_anno,  lnode_ani,  lanno_ani  = self.create_node("\mathcal{L}", pos=[-6.1,  2.9,  0 ])
     target_node, target_anno, targetnode_ani, targetanno_ani = self.create_node("t", pos=[-4.7,  1.5,  0 ])
+    
+    convert_to_primitive_ops_title = Text("Converting to primitive operations")
+    self.play(Write(convert_to_primitive_ops_title))
+    self.wait()
+    self.play(FadeOut(convert_to_primitive_ops_title))
 
     # introduce L and y first
     L = MathTex("{{ \mathcal{L} }}=").shift(UP * 3, LEFT*1.5)
