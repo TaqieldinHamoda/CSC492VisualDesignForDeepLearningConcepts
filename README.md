@@ -106,4 +106,12 @@ The video animations were created using [the community version of Manim](https:/
 
 [A guide to convolution arithmetic for deep learning](https://github.com/vdumoulin/conv_arithmetic) was heavily referenced when completing the transposed convolution videos.
 
+# Authors
 
+Taqieldin Hamoda
+
+Riley Hannigan
+
+Riddesh Shah
+
+Yiqi (Scott) Shen
