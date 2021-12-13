@@ -53,7 +53,7 @@ This video demonstrates the forward and backward pass computations using automat
 
 https://user-images.githubusercontent.com/6016719/144537960-5a5df6c9-34fa-4b73-9e2f-df39d51fa0f0.mp4
 
-This video demonstrates on computing the batch norm for a neural network. First the video shows how input is split up into batches and passed as input to the network. The hidden values are computed using arbitrary weights and shown in green. The next scene shows the calculation of the mean and variance of the hidden units along each dimension. These values are used in the next scene where the norm is calculated and the normalized values are put inside the neurons of the network.
+This video demonstrates computing the forward pass compuation of a batch normalization layer of a neural network. First the video shows how data is divided into three batches and passed as input to the network. The video only shows the calculations for the first batch to show how the computations are done. We show the hidden activations for each example in green and how they are normalized using the mean and standard deviation. These values are used in the next scene where the normalized activations are calculated and put inside the neurons of the network.
 
 # Convexity of MLP
 
