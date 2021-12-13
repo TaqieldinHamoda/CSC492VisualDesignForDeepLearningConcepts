@@ -88,7 +88,10 @@ This video demonstrates the impact of normalizing the input on the weight space.
 
 # Recurrent Neural Networks
 
-https://user-images.githubusercontent.com/6016719/144537988-d265a734-f0a3-4427-b59a-02b804fb2c98.mp4
+
+https://user-images.githubusercontent.com/6016719/145839544-0202adcf-2be0-4c2d-a54a-e4675256fc94.mp4
+
+
 
 This video focuses on the computation process in RNN during training using sentimental analysis. The purpose of this video is to provide an example of the forward pass process of RNN with concrete numbers. This example has a target t = [1, 0] (happy). The two major scenes are embedding look-up and forward pass computation. The embedding lookup shows how we obtained the vectors representing each word from an embedding (e.g. a custom embedding, GloVe, etc.). After we obtain the input, we focus on the time steps one by one, using x^(I), h^{(t-1)} along with fixed weights V, W to calculate h^{(t)}. The calculation scenes are zoomed-in & only the variables needed are presented to eliminate any distracting elements. The inputs x^{(i)} and hidden units h^{(t)} are colored to show the correlation between the symbols and matrices in the calculation. After we calculated the hidden activation h^{(3)}, we pass the value to a MLP, which will then output the prediction y = [2.1, 0.5].
 
