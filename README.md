@@ -4,6 +4,25 @@ The following videos are provided as visual aid for deep learning concepts. They
 
 **These videos are free to be used by anyone as long as the work produced using them is freely available online and the original project is referenced appropriately.**
 
+# Contents
+
+* [Installation](https://github.com/rileyhannigan/CSC492VisualDesignForDeepLearningConcepts#installation)
+  * [Installing Manim](https://github.com/rileyhannigan/CSC492VisualDesignForDeepLearningConcepts#installing-manim)
+  * [Rendering the Videos](https://github.com/rileyhannigan/CSC492VisualDesignForDeepLearningConcepts#rendering-the-videos)
+* [Attention](https://github.com/rileyhannigan/CSC492VisualDesignForDeepLearningConcepts#attention)
+* [Automatic Differentiation](https://github.com/rileyhannigan/CSC492VisualDesignForDeepLearningConcepts#automatic-differentiation)
+* [Batch Normalization](https://github.com/rileyhannigan/CSC492VisualDesignForDeepLearningConcepts#batch-normalization)
+* [Convexity of MLP](https://github.com/rileyhannigan/CSC492VisualDesignForDeepLearningConcepts#convexity-of-mlp)
+* [Ravines](https://github.com/rileyhannigan/CSC492VisualDesignForDeepLearningConcepts#ravines)
+* [Recurrent Neural Networks](https://github.com/rileyhannigan/CSC492VisualDesignForDeepLearningConcepts#recurrent-neural-networks)
+* [Transposed Convolutions](https://github.com/rileyhannigan/CSC492VisualDesignForDeepLearningConcepts#transposed-convolutions)
+  * [No Padding, Unit Strides Convolution](https://github.com/rileyhannigan/CSC492VisualDesignForDeepLearningConcepts#no-padding-unit-strides-convolution)
+  * [No Padding, Strided Convolution](https://github.com/rileyhannigan/CSC492VisualDesignForDeepLearningConcepts#no-padding-strided-convolution)
+  * [Padding, Unit Strides Convolution](https://github.com/rileyhannigan/CSC492VisualDesignForDeepLearningConcepts#padding-unit-strides-convolution)
+  * [Padding, Strided Convolution](https://github.com/rileyhannigan/CSC492VisualDesignForDeepLearningConcepts#padding-strided-convolution)
+* [Acknowledgements](https://github.com/rileyhannigan/CSC492VisualDesignForDeepLearningConcepts#acknowledgements)
+* [Authors](https://github.com/rileyhannigan/CSC492VisualDesignForDeepLearningConcepts#authors)
+
 # Installation
 
 ## Installing Manim
