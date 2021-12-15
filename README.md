@@ -96,31 +96,31 @@ https://user-images.githubusercontent.com/6016719/145839544-0202adcf-2be0-4c2d-a
 This video focuses on the computation process in RNN during training using sentimental analysis. The purpose of this video is to provide an example of the forward pass process of RNN with concrete numbers. This example has a target t = [1, 0] (happy). The two major scenes are embedding look-up and forward pass computation. The embedding lookup shows how we obtained the vectors representing each word from an embedding (e.g. a custom embedding, GloVe, etc.). After we obtain the input, we focus on the time steps one by one, using x^(I), h^{(t-1)} along with fixed weights V, W to calculate h^{(t)}. The calculation scenes are zoomed-in & only the variables needed are presented to eliminate any distracting elements. The inputs x^{(i)} and hidden units h^{(t)} are colored to show the correlation between the symbols and matrices in the calculation. After we calculated the hidden activation h^{(3)}, we pass the value to a MLP, which will then output the prediction y = [2.1, 0.5].
 
 # Transposed Convolutions
-The following videos demonstrate different cases of regular convolutions and their equivalent transposed convolutions. 
+The following videos demonstrate different cases of regular convolutions and their equivalent transposed convolutions. Transposed convolutions are used when increasing the resolution of a feature map.
 
 ## No Padding, Unit Strides Convolution
 
 https://user-images.githubusercontent.com/28056407/144645614-d857606a-be06-4b7f-b66b-f545fa77e3b7.mp4
 
-This video shows regular and transposed convolutions for the case when there is no padding (0x0) and the stride is 1x1. The input is 5x5 and the kernel is 3x3. First the regular convoltion is setup and the kernel is moved around the input, one stride at a time, creating the 3x3 output. Upon completion, the regular convoltion is moved to the left and then the equivilant transposed convoution is created and completed, with the kernel moving around and the transposed output being displayed one stride at a time.
+This video shows regular and transposed convolutions for the case when there is no padding (0x0) and the stride is 1x1. The input is 5x5 and the kernel is 3x3. First the regular convoltion is setup and the kernel is moved around the input, one stride at a time, creating the 3x3 output. Upon completion, the regular convoltion is moved to the left and then the equivilant transposed convoution is created with a 3x3 input and 2x2 padding, with the kernel moving around and the transposed 5x5 output being displayed one stride at a time.
 
 ## No Padding, Strided Convolution
 
 https://user-images.githubusercontent.com/28056407/144645572-27c0d116-b6e6-40e6-9a8a-91746a1206f6.mp4
 
-This video shows regular and transposed convolutions for the case when there is no padding and the stride is 2x2. The input is 4x4 and the kernel is 2x2. First the regular convoltion is setup and the kernel is moved around the input, one stride (of two units) at a time, creating the 2x2 output. Upon completion, the regular convoltion is moved to the left and then the equivilant transposed convoution is created and completed, including the necessary 1x1 stride padding, with the kernel moving around and the transposed output being displayed one stride at a time.
+This video shows regular and transposed convolutions for the case when there is no padding and the stride is 2x2. The input is 4x4 and the kernel is 2x2. First the regular convoltion is setup and the kernel is moved around the input, one stride (of two units) at a time, creating the 2x2 output. Upon completion, the regular convoltion is moved to the left and then the equivilant transposed convoution is created with a 2x2 input, 1x1 stride padding, and 1x1 padding, with the kernel moving around and the transposed 4x4 output being displayed one stride at a time.
 
 ## Padding, Unit Strides Convolution
 
 https://user-images.githubusercontent.com/28056407/144645697-c195c563-f7a9-4f31-a313-1851dcdef146.mp4
 
-This video shows regular and transposed convolutions for the case when there is 1x1 padding and the stride is 1x1. The input is 3x4 and the kernel is 2x2. First the regular convoltion is setup and the kernel is moved around the input, one stride at a time, creating the 4x5 output. Upon completion, the regular convoltion is moved to the left and then the equivilant transposed convoution is created and completed, with the kernel moving around and the transposed output being displayed one stride at a time.
+This video shows regular and transposed convolutions for the case when there is 1x1 padding and the stride is 1x1. The input is 3x4 and the kernel is 2x2. First the regular convoltion is setup and the kernel is moved around the input, one stride at a time, creating the 4x5 output. Upon completion, the regular convoltion is moved to the left and then the equivilant transposed convoution is created with a 4x5 input, with the kernel moving around and the transposed 3x4 output being displayed one stride at a time.
 
 ## Padding, Strided Convolution
 
 https://user-images.githubusercontent.com/28056407/144645654-df1a8d92-8c5f-45f5-ae3a-34c5c305b8b3.mp4
 
-This video shows regular and transposed convolutions for the case when there is 1x1 padding and the stride is 2x2. The input is 3x4 and the kernel is 3x3. First the regular convoltion is setup and the kernel is moved around the input, one stride (of two units) at a time, creating the 2x2 output. Upon completion, the regular convoltion is moved to the left and then the equivilant transposed convoution is created and completed, including the necessary 1x1 stride padding and 0x1 additional padding, with the kernel moving around and the transposed output being displayed one stride at a time.
+This video shows regular and transposed convolutions for the case when there is 1x1 padding and the stride is 2x2. The input is 3x4 and the kernel is 3x3. First the regular convoltion is setup and the kernel is moved around the input, one stride (of two units) at a time, creating the 2x2 output. Upon completion, the regular convoltion is moved to the left and then the equivilant transposed convoution is created with 2x2 input, 1x1 stride padding, 1x1 padding, and 0x1 additional padding, with the kernel moving around and the transposed 3x4 output being displayed one stride at a time.
 
 # Acknowledgements
 
