@@ -1,4 +1,4 @@
-# CSC492 Visual Design for Deep Learning Concepts
+# Visualizations of Deep Learning Concepts
 
 The following videos are provided as visual aid for deep learning concepts. They were created to be used by the **University of Toronto Mississauga**'s *CSC311: Introduction to Machine Learning* and *CSC413: Neural Networks and Deep Learning classes*. These videos were created in *CSC492: Visual Design for Deep Learning Concepts* project course.
 
