@@ -29,7 +29,7 @@ The following videos are provided as visual aid for deep learning concepts. They
 In order to render the videos, Manim must be installed.
 Please see [Manim's installation guide](https://docs.manim.community/en/stable/installation.html) for more information.
 
-**Note**: **DO NOT** use Manim 0.12.0 to compile the videos as it is unstable at the time of uploading this README. The videos were developed with Manim 0.11.0 and it is the prefered version to compile the videos with.
+**Note**: **DO NOT** use Manim 0.12.0 to render the videos as it is unstable at the time of uploading this README. The videos were developed with Manim 0.11.0 and it is the prefered version to render the videos with.
 
 **Note**: since Latex is used in the videos rendered, the [optional dependencies](https://docs.manim.community/en/stable/installation/linux.html#optional-dependencies) must be installed as well.
 
