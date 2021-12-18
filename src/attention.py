@@ -118,7 +118,7 @@ class Attention(Scene):
             		element_alignment_corner=UL,
             		left_bracket="[",
 		        right_bracket="]"
-		)
+		).scale(0.8)
 
 		hs_labels = [
 			Matrix(
@@ -291,20 +291,19 @@ class Attention(Scene):
 
 		self.wait(1)
 		self.play(Write(c_label.move_to(5.5*LEFT)))
+		self.play(Write(h_matrix.next_to(c_label, RIGHT)))
 		temp = MathTex(r"\alpha")
-		self.play(Write(temp.next_to(c_label, RIGHT)))
-		self.play(Write(h_matrix.next_to(temp, RIGHT)))
+		self.play(Write(temp.next_to(h_matrix, RIGHT)))
 
 		self.play(FadeOut(anno_label), FadeOut(s_anno_text[0]))
-		self.play(h_matrix.animate.shift(RIGHT))
-		self.play(ReplacementTransform(temp, s_anno_text[0].next_to(c_label, RIGHT)))
+		self.play(ReplacementTransform(temp, s_anno_text[0].next_to(h_matrix, RIGHT)))
 
 		temp = MathTex(r"=")
-		self.play(Write(temp.next_to(h_matrix, RIGHT)))
+		self.play(Write(temp.next_to(s_anno_text[0], RIGHT)))
 		self.play(Write(con_text[0].next_to(temp, RIGHT)))
 
 		self.play(FadeOut(temp), FadeOut(s_anno_text[0]), FadeOut(h_matrix))
-		self.play(con_text[0].animate.shift(4*LEFT))
+		self.play(con_text[0].animate.shift(3.8*LEFT))
 		self.wait(1)
 
 		# Arrow Shit
@@ -323,7 +322,7 @@ class Attention(Scene):
 		arrow_3 = Arrow(start=(3.5*RIGHT + 1.65*DOWN), end=(RIGHT + 0.25*DOWN),
 			color=h_colors[2],
 			buff=0,
-			max_tip_length_to_length_ratio=0,
+			max_tip_length_to_length_ratio=0.05,
 			max_stroke_width_to_length_ratio=0.5,
 		)
 
@@ -385,34 +384,33 @@ class Attention(Scene):
 
 		self.wait(1)
 		self.play(Write(c_label.move_to(5.5*LEFT)))
+		self.play(Write(h_matrix.next_to(c_label, RIGHT)))
 		temp = MathTex(r"\alpha")
-		self.play(Write(temp.next_to(c_label, RIGHT)))
-		self.play(Write(h_matrix.next_to(temp, RIGHT)))
+		self.play(Write(temp.next_to(h_matrix, RIGHT)))
 
 		self.play(FadeOut(anno_label), FadeOut(s_anno_text[1]))
-		self.play(h_matrix.animate.shift(RIGHT))
-		self.play(ReplacementTransform(temp, s_anno_text[1].next_to(c_label, RIGHT)))
+		self.play(ReplacementTransform(temp, s_anno_text[1].next_to(h_matrix, RIGHT)))
 
 		temp = MathTex(r"=")
-		self.play(Write(temp.next_to(h_matrix, RIGHT)))
+		self.play(Write(temp.next_to(s_anno_text[1], RIGHT)))
 		self.play(Write(con_text[1].next_to(temp, RIGHT)))
 
 		self.play(FadeOut(temp), FadeOut(s_anno_text[1]), FadeOut(h_matrix))
-		self.play(con_text[1].animate.shift(4*LEFT))
+		self.play(con_text[1].animate.shift(3.8*LEFT))
 		self.wait(1)
 
 		# Arrow Shit
 		arrow_1 = Arrow(start=(3.5*LEFT + 1.65*DOWN), end=(3.5*LEFT + 0.25*DOWN),
 			color=h_colors[0],
 			buff=0,
-			max_tip_length_to_length_ratio=0,
-			max_stroke_width_to_length_ratio=0.5,
+			max_tip_length_to_length_ratio=0.1,
+			max_stroke_width_to_length_ratio=1,
 		)
 		arrow_2 = Arrow(start=(1.65*DOWN), end=(1.25*LEFT + 0.25*DOWN),
 			color=h_colors[1],
 			buff=0,
 			max_tip_length_to_length_ratio=0.1,
-			max_stroke_width_to_length_ratio=2,
+			max_stroke_width_to_length_ratio=1,
 		)
 		arrow_3 = Arrow(start=(3.5*RIGHT + 1.65*DOWN), end=(RIGHT + 0.25*DOWN),
 			color=h_colors[2],
