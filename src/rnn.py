@@ -1,18 +1,21 @@
-# original work on colab: https://colab.research.google.com/drive/1izlTyOY-b1uPXlTsMy3jOWNIIOtYiSfL?usp=sharing
-
-from manim import *
-
-
 class Rnn(MovingCameraScene):
   def construct(self):
     title = Text('Recurrent Neural Network', gradient=(BLUE, GREEN))
-    subtitle = Text('Forward Pass (training)').shift(DOWN).scale(0.5)
-    embedding_look_up_subtitle = Text('Embedding look up')
+    subtitle = Text('Forward Pass Computation').shift(DOWN).scale(0.5)
+    embedding_look_up_subtitle = Text('Embedding look up step')
+
+    step1 = Text('Step 1: Embedding look up').scale(0.7)
+    step2 = Text('Step 2: Forward pass computation').scale(0.7)
+    step1.next_to(step2, UP, aligned_edge=LEFT)
 
     self.play(Write(title))
     self.play(FadeIn(subtitle))
     self.wait()
     self.play(FadeOut(title), FadeOut(subtitle))
+    self.play(Write(step1), Write(step2))
+    self.wait()
+    self.play(FadeOut(step1), FadeOut(step2))
+
     # display 3 words
     word1 = Text("I").shift(LEFT * 2.5)
     word2 = Text("feel").next_to(word1)
@@ -123,7 +126,7 @@ class Rnn(MovingCameraScene):
     self.play(Write(x1_label), Write(x2_label), Write(x3_label))
 
 
-    forward_pass_title = Text('Forward pass calculation')
+    forward_pass_title = Text('Forward pass computation')
     self.play(Write(forward_pass_title))
     self.wait()
     self.play(forward_pass_title.animate.shift(UP*3.5).scale(0.5))
