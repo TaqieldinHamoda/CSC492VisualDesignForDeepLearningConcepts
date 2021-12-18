@@ -47,7 +47,7 @@ Here is an example showing how to render the Attention video:
 **Please see Manim's [Configuration Page](https://docs.manim.community/en/stable/tutorials/configuration.html) for more information on rendering videos.**
 
 # Attention
-https://user-images.githubusercontent.com/46078134/146457932-0780aae3-3ff7-4cf2-b79a-b4ea2de964c6.mp4
+https://user-images.githubusercontent.com/46078134/146653127-00544ed2-b6c7-4534-af40-ec8f4f7194dc.mp4
 
 This video demonstrates how attention is used alongside RNNs. Both the encoder (bottom layer) and the decoder (upper layer) units are fully trained
 and the weights have been optimized for the translation task presented: translating from English to Spanish. The previous output of the decoder is used alongside the outputs produced from the encoder to calculate the *alpha* (or *attention*) vector. The *alpha* vector provides a weight for each of the encoder's hidden units which helps the decoder determine which hidden unit (read **word**) to **pay more attention to** when determining the correct output.
@@ -57,7 +57,7 @@ In the first iteration, the *alpha* vector gives the first hidden unit ("I") a w
 In the second iteration, the *alpha* vector gives the first hidden unit ("I") a weight of 0.00, the second hidden unit ("Eat") a weight of 0.01, and the third hidden unit ("Apples") a weight of 0.99. Using the previous output ("Como") and the context vector, the decoder is able to determine that the word it should output next is the Spanish equivalent of the word "Apples" and that it should ignore the other English words provided; as such, "Manzanas" is the output provided.
 
 ## Raw Video (No Captions)
-https://user-images.githubusercontent.com/46078134/145479213-9ca9cfe5-aaab-45ee-8acf-581d16edbbf8.mp4
+https://user-images.githubusercontent.com/46078134/146653133-ffb3074d-20a5-4974-909b-ae3c3d93420e.mp4
 
 # Automatic Differentiation
 
