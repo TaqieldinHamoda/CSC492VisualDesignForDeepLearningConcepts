@@ -1,8 +1,5 @@
 # original work on colab: https://colab.research.google.com/drive/1_rvoulTl-N61J9YiqtGH8PfWxKTcbKKI?usp=sharing
 
-from manim import *
-import itertools
-
 class Autodiff(MovingCameraScene):
   def create_node(self, label, pos=[]):
     if pos:
@@ -36,6 +33,14 @@ class Autodiff(MovingCameraScene):
     self.wait(2)
     self.play(FadeOut(title))
 
+    step1 = Text("Step 1: Constructing the computation graph").scale(0.7).shift(UP)
+    step2 = Text("Step 2: Forward pass computation").scale(0.7).next_to(step1, DOWN, aligned_edge=LEFT)
+    step3 = Text("Step 3: Backward pass computation").scale(0.7).next_to(step2, DOWN, aligned_edge=LEFT)
+
+    self.play(Write(step1), Write(step2), Write(step3))
+    self.wait(2)
+    self.play(FadeOut(step1), FadeOut(step2), FadeOut(step3))
+
     x1_node, x1_anno, x1node_ani, x1anno_ani = self.create_node("h_1", pos=[-5.1, -2.9, 0 ])
     x2_node, x2_anno, x2node_ani, x2anno_ani = self.create_node("h_2", pos=[-3.1, -2.9,  0 ])
     z1_node, z1_anno, z1node_ani, z1anno_ani = self.create_node("z_1", pos=[-5.1, -1.5,  0 ])
@@ -45,8 +50,8 @@ class Autodiff(MovingCameraScene):
     d_node,  d_anno,  dnode_ani,  danno_ani  = self.create_node("\mathcal{D}", pos=[-6.1,  1.5,  0 ])
     l_node,  l_anno,  lnode_ani,  lanno_ani  = self.create_node("\mathcal{L}", pos=[-6.1,  2.9,  0 ])
     target_node, target_anno, targetnode_ani, targetanno_ani = self.create_node("t", pos=[-4.7,  1.5,  0 ])
-    
-    convert_to_primitive_ops_title = Text("Converting to primitive operations")
+
+    convert_to_primitive_ops_title = Text("Constructing the computation graph")
     self.play(Write(convert_to_primitive_ops_title))
     self.wait()
     self.play(FadeOut(convert_to_primitive_ops_title))
@@ -86,7 +91,6 @@ class Autodiff(MovingCameraScene):
     self.play(Transform(L_func_orig.submobjects[0], D_replaced))
     self.play(Transform(L_func_orig, L_final_right))
     self.wait()
-
 
     # replace e^h1 + e^h2 with T
     T = MathTex("{{ \mathcal{T} }} =").shift( LEFT*1.5)
@@ -129,6 +133,7 @@ class Autodiff(MovingCameraScene):
     # replace e^h1 with z1
     self.play(Transform(y_func_orig.submobjects[0], z1_replaced_1), 
               Transform(T_func_orig.submobjects[0], z1_replaced_2))
+    
     self.wait()
 
     # make the fraction look better for y
@@ -148,6 +153,7 @@ class Autodiff(MovingCameraScene):
 
     # replace e^h2 with z2
     self.play(Transform(T_func_orig.submobjects[2], z2_replaced))
+
     self.wait()
 
     # graph all the nodes 
@@ -172,10 +178,13 @@ class Autodiff(MovingCameraScene):
     self.play(x1node_ani, x2node_ani, targetnode_ani, 
               x1anno_ani, x2anno_ani, targetanno_ani)
 
+
     # graph L and D
     self.play(Indicate(L.submobjects[0]))
+    # self.play(lnode_ani, lanno_ani)
     self.play(Circumscribe(L_func_orig))
     self.play(Indicate(L_func_orig.submobjects[0]))
+    # self.play(dnode_ani, danno_ani)
 
     d_l_edge = self.create_arrows([d_node], [l_node])
     self.wait()
@@ -195,7 +204,7 @@ class Autodiff(MovingCameraScene):
     # graph T
     self.play(Indicate(y.submobjects[0]))
     self.play(Circumscribe(y_func_orig))
-    self.play(Indicate(y_func_orig.submobjects[3])) 
+    self.play(Indicate(y_func_orig.submobjects[3]))
 
     # hilight z1 in y
     self.play(Indicate(y_func_orig.submobjects[0]))
@@ -207,9 +216,13 @@ class Autodiff(MovingCameraScene):
     self.play(Indicate(T.submobjects[0]))
     self.play(Circumscribe(T_func_orig))
     self.play(Indicate(T_func_orig.submobjects[0]))
+    # self.play(z1node_ani, z1anno_ani)
+    # self.wait()
 
     # graph z2
+    # self.play(Circumscribe(T_func_orig))
     self.play(Indicate(T_func_orig.submobjects[2]))
+    # self.play(z2node_ani, z2anno_ani)
     z1_t_edge = self.create_arrows([z1_node], [t_node])
     z2_t_edge = self.create_arrows([z2_node], [t_node])
     self.wait()
@@ -218,6 +231,7 @@ class Autodiff(MovingCameraScene):
     self.play(Indicate(z1.submobjects[0]))
     self.play(Circumscribe(z1_func_orig))
     self.play(Indicate(z1_func_orig.submobjects[1]))
+    # self.play(x1anno_ani, x1node_ani)
     x1_z1_edge = self.create_arrows([x1_node], [z1_node])
     self.wait()
 
@@ -225,6 +239,7 @@ class Autodiff(MovingCameraScene):
     self.play(Indicate(z2.submobjects[0]))
     self.play(Circumscribe(z2_func_orig))
     self.play(Indicate(z2_func_orig.submobjects[1]))
+    # self.play(x2anno_ani, x2node_ani)
     x2_z2_edge = self.create_arrows([x2_node], [z2_node])
     self.wait()
 
@@ -246,6 +261,8 @@ class Autodiff(MovingCameraScene):
 
     self.play(Flash(target_node, color=GREEN, flash_radius=0.5+SMALL_BUFF))
     self.play((Transform(target_anno, target_val)))
+
+    # self.play(Indicate(x1_anno), Indicate(x2_anno), Indicate())
 
     # z substitution
     z1_val = MathTex(r"z_1 = 1").move_to(z1_anno).scale(0.4)
@@ -329,6 +346,8 @@ class Autodiff(MovingCameraScene):
     lower_point = Dot().next_to(upper_point, DOWN*20)
     lower_point.set_color(BLACK)
     divider = Line(upper_point, lower_point)
+    # self.play(Create(divider))
+
 
     # dLdD formula
     dldD_1 = MathTex(r"{{\frac{\partial \mathcal{L} }{\partial \mathcal{D} }}} = {{\frac{\partial \mathcal{D}^2}{\partial \mathcal{D} }}}").scale(0.75)
@@ -360,6 +379,7 @@ class Autodiff(MovingCameraScene):
     dldy_3.move_to(dldy_1)
     dldy_4.move_to(dldy_1)
     dldy_5.move_to(dldy_1)
+    # self.play(FadeOut(D), FadeOut(D_func))
     self.play(Write(dldy_1), FadeToColor(y_d_edge[0], RED_A))
     self.wait(0.5)
     self.play(Indicate(dldy_1.submobjects[2]), Indicate(dldD_4))
@@ -387,6 +407,7 @@ class Autodiff(MovingCameraScene):
     dldT_5.move_to(dldT_1)
     dldT_6.move_to(dldT_1)
 
+    # self.play(FadeOut(y), FadeOut(y_func_orig), FadeOut(T_replaced))
     self.play(Write(dldT_1), FadeToColor(t_y_edge[0], RED_A))
     self.wait(0.5)
     self.play(Indicate(dldT_1.submobjects[2]), Indicate(dldy_5))
@@ -418,6 +439,7 @@ class Autodiff(MovingCameraScene):
     dldz1_5.move_to(dldz1_1)
     dldz1_6.move_to(dldz1_1)
 
+    # self.play(FadeOut(T), FadeOut(T_func_orig))
     self.play(Write(dldz1_1),
               FadeToColor(z1_t_edge[0], RED_A),
               FadeToColor(z1_y_edge[0], RED_A))
@@ -481,6 +503,7 @@ class Autodiff(MovingCameraScene):
     dldh1_5.move_to(dldh1_1)
     dldh1_6.move_to(dldh1_1)
     
+    # self.play(FadeOut(z1), FadeOut(z1_func_orig))
     self.play(Write(dldh1_1),
               FadeToColor(x1_z1_edge[0], RED_A),
               FadeToColor(z1_y_edge[0], RED_A),
@@ -513,6 +536,7 @@ class Autodiff(MovingCameraScene):
     dldh2_4.move_to(dldh2_1)
     dldh2_5.move_to(dldh2_1)
     
+    # self.play(FadeOut(z2), FadeOut(z2_func_orig))
     self.wait()
     self.play(Write(dldh2_1),
               FadeToColor(x2_z2_edge[0], RED_A),
