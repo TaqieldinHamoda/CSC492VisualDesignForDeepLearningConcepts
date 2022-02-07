@@ -11,8 +11,8 @@ def create_node(scene, label, pos=[]):
     node = Circle(radius=0.5, color=BLUE)
     anno = MathTex(label)
 
-  return VGroup(node, anno), Create(node), Write(anno)
-
+  # scene.play(Create(node), Write(anno))
+  return node, anno, Create(node), Write(anno)
 
 # create lines pair-wise; start_nodes * end_nodes
 # returns a list containing the lines created
@@ -24,21 +24,21 @@ def create_edges(scene, start_nodes, end_nodes):
                    list(itertools.product(start_nodes, end_nodes))))
   return edges
 
-
-def swap_node(scene, node1, node2):
-  scene.play(node2.animate.move_to(node1), node1.animate.move_to(node2))
-
+def swap_node(scene, node1, node2, node1_anno, node2_anno):
+  scene.play(node2.animate.move_to(node1), node1.animate.move_to(node2), 
+             node1_anno.animate.become(node2_anno).move_to(node2_anno),
+             node2_anno.animate.become(node1_anno).move_to(node1_anno))
 
 class Convexity(Scene):
   def construct(self):
     # the NN
-    x_1_node, x_1_node_ani, x_1_anno_ani = create_node(self, "x_1", [UP, LEFT * 4])
-    x_2_node, x_2_node_ani, x_2_anno_ani = create_node(self, "x_2", [DOWN, LEFT * 4])
-    h_1_node, h_1_node_ani, h_1_anno_ani = create_node(self, "h_1", [UP*2])
-    h_2_node, h_2_node_ani, h_2_anno_ani = create_node(self, "h_2", [(UP*2+DOWN*2)//2])
-    h_3_node, h_3_node_ani, h_3_anno_ani = create_node(self, "h_3", [DOWN*2])
+    x_1_node, x_1_node_anno, x_1_node_ani, x_1_anno_ani = create_node(self, "x_1", [UP, LEFT * 4])
+    x_2_node, x_2_node_anno, x_2_node_ani, x_2_anno_ani = create_node(self, "x_2", [DOWN, LEFT * 4])
+    h_1_node, h_1_node_anno, h_1_node_ani, h_1_anno_ani = create_node(self, "h_1", [UP*2])
+    h_2_node, h_2_node_anno, h_2_node_ani, h_2_anno_ani = create_node(self, "h_2", [(UP*2+DOWN*2)//2])
+    h_3_node, x_3_node_anno, h_3_node_ani, h_3_anno_ani = create_node(self, "h_3", [DOWN*2])
 
-    z_node, z_node_ani, z_anno_ani = create_node(self, "z", [RIGHT*4])
+    z_node, z_node_anno, z_node_ani, z_anno_ani = create_node(self, "z", [RIGHT*4])
 
     self.play(x_1_node_ani, x_1_anno_ani, 
               x_2_node_ani, x_2_anno_ani, 
@@ -56,7 +56,7 @@ class Convexity(Scene):
     E1[1].set_color(RED)
     E1[4].set_color(RED)
     E2[1].set_color(RED)
-    self.play(*map(lambda x: Create(x), E1), (*map(lambda x: Create(x), E2)))
+    self.play(*map(lambda x: Create(x), E1), *map(lambda x: Create(x), E2))
 
     # weight1 matrix dimensions = 2*3
     # weight2 matrix dimensions = 3*1
@@ -79,10 +79,10 @@ class Convexity(Scene):
     row2 = weight_matrix2.get_rows()[1]
 
     self.play(Write(W_text), Create(weight_matrix), Write(W2_text), Create(weight_matrix2))
-
+    # self.play(ReplacementTransform(weight_matrix, modified_weight_matrix))
     self.play(col1.animate.move_to(col2), 
               col2.animate.move_to(col1),
               row1.animate.move_to(row2),
               row2.animate.move_to(row1))
     
-    swap_node(self, h_1_node, h_2_node)
+    swap_node(self, h_1_node, h_2_node, h_1_node_anno, h_2_node_anno)
