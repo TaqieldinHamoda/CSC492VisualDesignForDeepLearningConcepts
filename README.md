@@ -76,7 +76,7 @@ This video demonstrates computing the forward pass compuation of a batch normali
 
 # Convexity of MLP
 
-https://user-images.githubusercontent.com/6016719/144537920-6170799f-a017-486c-9741-187305143b78.mp4
+https://user-images.githubusercontent.com/6016719/152712930-d1990f68-2aac-4dec-91d7-41349058a065.mp4
 
 The video demonstrates that a neural network is neither convex nor concave by swapping two hidden activations h1 and h2 (connected by weights colored blue and red respectively). The corresponding entries in the weight matrices for h1 and h2 are also swapped. It shows that there exists another permutation of weights that will have the same prediction (and therefore the same loss) as before swapping the hidden activations h1 and h2. In the loss space, there will be multiple minimum loss as a result, hence a neural network is neither convex nor concave.
 
