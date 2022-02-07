@@ -1,7 +1,28 @@
 # original work on colab: https://colab.research.google.com/drive/11pVYtpCAclAmaB5ryc7biRWKa4jhSzhz?usp=sharing
-
-import itertools as it
+import itertools
 from manim import *
+
+def create_node(scene, label, pos=[]):
+  if pos:
+    node = Circle(radius=0.5, color=BLUE).shift(*pos)
+    anno = MathTex(label).shift(*pos)
+  else:
+    node = Circle(radius=0.5, color=BLUE)
+    anno = MathTex(label)
+
+  # scene.play(Create(node), Write(anno))
+  return node, anno, Create(node), Write(anno)
+
+# create lines pair-wise; start_nodes * end_nodes
+# returns a list containing the lines created
+def create_edges(scene, start_nodes, end_nodes):
+  edges = list(map(lambda pair: Line(start=pair[0].get_right(), 
+                                end=pair[1].get_left(), 
+                                stroke_width=2), 
+                   list(itertools.product(start_nodes, end_nodes))))
+
+  scene.play(*map(lambda x: Create(x), edges))
+  return edges
 
 # input used for the video
 x1 = [3.0, 5.0, 6.0, 4.0, 7.0, 9.0, 2.0, 1.0, 8.0]
@@ -224,13 +245,13 @@ class BN(MovingCameraScene):
         # expand mu2
         self.play(Circumscribe(SurroundingRectangle(VGroup(*map(lambda x: x.get_rows()[1], 
                                                                 [hidden_1, hidden_2, hidden_3])))))
-        mu_2_expanded = MathTex(r"\mu_2 = \frac{.46+.68+.72}{3}=1.9").shift(mu_2_formula.get_center())
+        mu_2_expanded = MathTex(r"\mu_2 = \frac{.46+.68+.72}{3}=.62").shift(mu_2_formula.get_center())
 
         self.play(Transform(mu_2_formula, mu_2_expanded))
         self.wait(2)
 
         mu_1 = MathTex(r'\mu_1 = 4.6').shift(mu_1_expanded.get_center(), LEFT)
-        mu_2 = MathTex(r'\mu_2 = 1.9').shift(mu_2_expanded.get_center(), LEFT)
+        mu_2 = MathTex(r'\mu_2 = .62').shift(mu_2_expanded.get_center(), LEFT)
         self.play(Transform(mu_1_formula, mu_1), Transform(mu_2_formula, mu_2))
 
         self.wait(2)
@@ -258,7 +279,7 @@ class BN(MovingCameraScene):
         self.play(Circumscribe(SurroundingRectangle(mu_2)))
 
 
-        var_2_expanded = MathTex(r"\sigma_2 = \sqrt{\frac{(.46-1.9)^2 + (.68-1.9)^2 + (.72-1.9)^2}{3}} = \sqrt{1.65}").scale(0.6).shift(var_2_formula.get_center(), RIGHT)
+        var_2_expanded = MathTex(r"\sigma_2 = \sqrt{\frac{(.46-.62)^2 + (.68-.62)^2 + (.72-.62)^2}{3}} = \sqrt{.11}").scale(0.6).shift(var_2_formula.get_center(), RIGHT)
         var_2 = MathTex(r"\sigma_2=\sqrt{1.6}").shift(var_1.get_center(), DOWN*1.5)
         self.play(Transform(var_2_formula, var_2_expanded))
         self.wait(2)
@@ -269,7 +290,7 @@ class BN(MovingCameraScene):
         self.play(Write(h_1_norm), Write(h_2_norm))
         self.wait(2)
         h_1_norm_sub = MathTex(r"\hat{h_1} = \frac{h_1 - 4.6}{1.25}=").shift(mu_1.get_center(), RIGHT*3)
-        h_2_norm_sub = MathTex(r"\hat{h_2} = \frac{h_2 - 1.9}{1.28}=").shift(mu_2.get_center(), RIGHT*3)
+        h_2_norm_sub = MathTex(r"\hat{h_2} = \frac{h_2 - .62}{1.28}=").shift(mu_2.get_center(), RIGHT*3)
 
         self.play(Transform(h_1_norm, h_1_norm_sub))
         self.play(Transform(h_2_norm, h_2_norm_sub))
