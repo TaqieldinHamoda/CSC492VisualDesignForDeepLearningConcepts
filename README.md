@@ -69,7 +69,8 @@ This video demonstrates the forward and backward pass computations using automat
 
 # Batch Normalization
 
-https://user-images.githubusercontent.com/6016719/144537960-5a5df6c9-34fa-4b73-9e2f-df39d51fa0f0.mp4
+https://user-images.githubusercontent.com/6016719/152710294-8806a1d7-c033-4fde-8968-d5bfc6aed07b.mp4
+
 
 This video demonstrates computing the forward pass compuation of a batch normalization layer of a neural network. First the video shows how data is divided into three batches and passed as input to the network. The video only shows the calculations for the first batch to show how the computations are done. We show the hidden activations for each example in green and how they are normalized using the mean and standard deviation. These values are used in the next scene where the normalized activations are calculated and put inside the neurons of the network.
 
