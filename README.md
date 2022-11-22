@@ -132,6 +132,6 @@ Taqieldin Hamoda
 
 Riley Hannigan
 
-Riddesh Shah
+Riddhesh Shah
 
 Yiqi (Scott) Shen
